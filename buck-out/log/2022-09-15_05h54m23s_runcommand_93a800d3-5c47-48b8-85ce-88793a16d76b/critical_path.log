@@ -1,0 +1,4 @@
+//:app#macosx-x86_64,private-headers: {"totalElapsedTimeMs":10,"type":"cxx_header_symlink_tree","executionTimeInfo":{"executionDurationMs":10,"eventNanoTime":262277015284991}}
+//:app#macosx-x86_64,preprocessor-deps: {"totalElapsedTimeMs":10,"type":"dependency_aggregation","executionTimeInfo":{"executionDurationMs":0,"eventNanoTime":262277027841007}}
+//:app#compile-TcpServer.cpp.o83230cec,macosx-x86_64: {"totalElapsedTimeMs":2196,"type":"cxx_preprocess_and_compile","executionTimeInfo":{"executionDurationMs":2186,"eventNanoTime":262279232032095}}
+//:app#binary: {"totalElapsedTimeMs":2289,"type":"cxx_link","executionTimeInfo":{"executionDurationMs":93,"eventNanoTime":262279346585555}}

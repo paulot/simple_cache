@@ -1,0 +1,120 @@
+[2022-09-14 22:54:10.612][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.event.listener.RenderingConsole] Starting render scheduler (interval 100 ms)
+[2022-09-14 22:54:10.620][debug][command:null][tid:27][com.facebook.buck.util.perf.ProcessTracker] startUp
+[2022-09-14 22:54:10.620][debug][command:null][tid:27][com.facebook.buck.util.perf.ProcessTracker] startUp
+[2022-09-14 22:54:10.627][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.util.environment.MacWifiSsidFinder] Getting current SSID..
+[2022-09-14 22:54:10.646][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.util.environment.MacWifiSsidFinder] Getting SSID from Wi-Fi interface: <CWInterface: 0x7f9f0643a340> [interfaceName=en0]
+[2022-09-14 22:54:10.646][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.util.environment.MacWifiSsidFinder] Found SSID: poopstars
+[2022-09-14 22:54:15.715][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.util.randomizedtrial.RandomizedTrial] Determined key: 'paulot@Pauls-MacBook-Pro.local/depsaware_executor/03ed233d-00a6-41a0-866a-3dbeb87f7235'
+[2022-09-14 22:54:15.725][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] InvocationInfo BuildId=[03ed233d-00a6-41a0-866a-3dbeb87f7235] Args=[clean]
+[2022-09-14 22:54:15.749][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.support.build.report.BuildReportUtils] Build report is not enabled
+[2022-09-14 22:54:15.788][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.support.build.report.BuildReportUtils] Build report is not enabled
+[2022-09-14 22:54:15.790][warn ][command:null][tid:31][com.facebook.buck.event.listener.PublicAnnouncementManager] Failed to get public announcements. Reason: Failed to establish connection to server.
+[2022-09-14 22:54:15.790][warn ][command:null][tid:31][com.facebook.buck.event.listener.PublicAnnouncementManager] Failed to get public announcements. Reason: Failed to establish connection to server.
+[2022-09-14 22:54:15.792][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine network service order and extract device names
+[2022-09-14 22:54:15.792][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine network service order and extract device names
+[2022-09-14 22:54:15.794][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -listnetworkserviceorder, ]}
+[2022-09-14 22:54:15.794][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -listnetworkserviceorder, ]}
+[2022-09-14 22:54:15.822][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@131a21af
+[2022-09-14 22:54:15.822][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@131a21af
+[2022-09-14 22:54:15.825][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@1a65a354 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.825][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@1a65a354 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.845][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 0
+[2022-09-14 22:54:15.845][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 0
+[2022-09-14 22:54:15.845][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@1a65a354 (force true)
+[2022-09-14 22:54:15.845][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@1a65a354 (force true)
+[2022-09-14 22:54:15.845][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine active state of media for device
+[2022-09-14 22:54:15.845][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine active state of media for device
+[2022-09-14 22:54:15.846][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -getMedia, en5]}
+[2022-09-14 22:54:15.846][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -getMedia, en5]}
+[2022-09-14 22:54:15.849][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@669496d7
+[2022-09-14 22:54:15.849][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@669496d7
+[2022-09-14 22:54:15.850][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@6279ae06 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.850][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@6279ae06 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 4
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 4
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@6279ae06 (force true)
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@6279ae06 (force true)
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine active state of media for device
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine active state of media for device
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -getMedia, en0]}
+[2022-09-14 22:54:15.870][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -getMedia, en0]}
+[2022-09-14 22:54:15.872][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@44a7fdbd
+[2022-09-14 22:54:15.872][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@44a7fdbd
+[2022-09-14 22:54:15.873][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@2ba11057 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.873][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@2ba11057 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.893][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 0
+[2022-09-14 22:54:15.893][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 0
+[2022-09-14 22:54:15.894][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@2ba11057 (force true)
+[2022-09-14 22:54:15.894][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@2ba11057 (force true)
+[2022-09-14 22:54:15.894][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine WiFi SSID of device
+[2022-09-14 22:54:15.894][debug][command:null][tid:32][com.facebook.buck.util.environment.MacNetworkConfiguration] Determine WiFi SSID of device
+[2022-09-14 22:54:15.894][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -getairportnetwork, en0]}
+[2022-09-14 22:54:15.894][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Launching process with params ProcessExecutorParams{command=[networksetup, -getairportnetwork, en0]}
+[2022-09-14 22:54:15.895][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@31fcc0d4
+[2022-09-14 22:54:15.895][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Successfully launched process com.zaxxer.nuprocess.osx.OsxProcess@31fcc0d4
+[2022-09-14 22:54:15.897][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@b222430 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.897][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Waiting for process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@b222430 timeout 1000 MILLISECONDS
+[2022-09-14 22:54:15.917][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 0
+[2022-09-14 22:54:15.917][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Wait for process returned 0
+[2022-09-14 22:54:15.917][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@b222430 (force true)
+[2022-09-14 22:54:15.917][debug][command:null][tid:32][com.facebook.buck.util.ListeningProcessExecutor] Destroying process com.facebook.buck.util.ListeningProcessExecutor$LaunchedProcessImpl@b222430 (force true)
+[2022-09-14 22:54:20.841][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.CleanCommand] Removed path: buck-out/log/journal
+[2022-09-14 22:54:20.849][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.CleanCommand] Removed path: buck-out/bin
+[2022-09-14 22:54:20.860][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.CleanCommand] Removed path: buck-out/cache
+[2022-09-14 22:54:20.862][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.CleanCommand] Removed path: buck-out/gen
+[2022-09-14 22:54:20.862][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.CleanCommand] Removed path: buck-out/.trash
+[2022-09-14 22:54:20.869][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:28][com.facebook.buck.event.listener.CriticalPathEventListener] Received command finished event for command : clean
+[2022-09-14 22:54:20.870][info ][command:null][tid:38][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:38][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:41][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:41][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:40][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:40][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:42][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:42][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:39][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:39][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:43][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:43][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:44][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:44][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:45][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:45][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:51][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:51][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:47][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:47][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:52][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:52][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:46][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.870][info ][command:null][tid:46][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:50][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:50][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:49][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:49][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:48][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:48][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:53][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.871][info ][command:null][tid:53][com.facebook.buck.core.graph.transformation.executor.impl.AbstractDepsAwareExecutor] Worker was interrupted
+[2022-09-14 22:54:20.875][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:27][com.facebook.buck.util.perf.ProcessTracker] shutDown
+[2022-09-14 22:54:20.877][debug][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.event.listener.RenderingConsole] Stopping render scheduler
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of PROJECT executor service. Waiting for all jobs to complete, or up to maximum of 60 seconds...
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated PROJECT executor service.
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of NETWORK executor service. Waiting for all jobs to complete, or up to maximum of 60 seconds...
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated NETWORK executor service.
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of GRAPH_CPU executor service. Waiting for all jobs to complete, or up to maximum of 60 seconds...
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated GRAPH_CPU executor service.
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of CPU executor service. Waiting for all jobs to complete, or up to maximum of 60 seconds...
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated CPU executor service.
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of ScheduledExecutorService executor service. Waiting for all jobs to complete, or up to maximum of 60 seconds...
+[2022-09-14 22:54:20.877][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated ScheduledExecutorService executor service.
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of CounterAggregatorExecutor executor service. Waiting for all jobs to complete, or up to maximum of 20 seconds...
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated CounterAggregatorExecutor executor service.
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of HTTP Read executor service. Waiting for all jobs to complete, or up to maximum of 1800 seconds...
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated HTTP Read executor service.
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of HTTP Write executor service. Waiting for all jobs to complete, or up to maximum of 1800 seconds...
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated HTTP Write executor service.
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Awaiting termination of Disk IO executor service. Waiting for all jobs to complete, or up to maximum of 10 seconds...
+[2022-09-14 22:54:20.878][info ][command:03ed233d-00a6-41a0-866a-3dbeb87f7235][tid:01][com.facebook.buck.cli.MainRunner] Successfully terminated Disk IO executor service.
+[2022-09-14 22:54:20.889][debug][command:null][tid:56][com.facebook.buck.event.listener.ChromeTraceBuildListener] Writing Chrome trace to buck-out/log/2022-09-15_05h54m10s_cleancommand_03ed233d-00a6-41a0-866a-3dbeb87f7235/build.2022-09-14.22-54-15.03ed233d-00a6-41a0-866a-3dbeb87f7235.trace
+[2022-09-14 22:54:20.894][debug][command:null][tid:01][com.facebook.buck.cli.MainRunner] Done.
