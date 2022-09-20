@@ -19,45 +19,26 @@ std::string make_daytime_string()
 }
 */
 
-class tcp_connection
-  : public boost::enable_shared_from_this<tcp_connection>
-{
+class TcpConnection
+  : public boost::enable_shared_from_this<TcpConnection> {
 public:
-  typedef boost::shared_ptr<tcp_connection> pointer;
+  typedef boost::shared_ptr<TcpConnection> pointer;
 
-  static pointer create(boost::asio::io_service& io_service)
-  {
-    return pointer(new tcp_connection(io_service));
+  static pointer create(boost::asio::io_service& io_service) {
+    return pointer(new TcpConnection(io_service));
   }
 
-  tcp::socket& socket()
-  {
-    return socket_;
-  }
+  tcp::socket& socket();
 
-  void start()
-  {
-    // message_ = make_daytime_string();
-    time_t now = std::time(0);
-    message_ = std::ctime(&now);
-
-    boost::asio::async_write(socket_, boost::asio::buffer(message_),
-        boost::bind(&tcp_connection::handle_write, shared_from_this(),
-          boost::asio::placeholders::error,
-          boost::asio::placeholders::bytes_transferred));
-  }
+  void start();
 
 private:
-  tcp_connection(boost::asio::io_service& io_service)
-    : socket_(io_service)
-  {
-  }
-
-  void handle_write(const boost::system::error_code& /*error*/,
-      size_t /*bytes_transferred*/)
-  {
-  }
-
   tcp::socket socket_;
   std::string message_;
+
+  TcpConnection(boost::asio::io_service& io_service)
+      : socket_(io_service) {}
+
+  void handle_write(const boost::system::error_code& /*error*/,
+      size_t /*bytes_transferred*/) {}
 };
