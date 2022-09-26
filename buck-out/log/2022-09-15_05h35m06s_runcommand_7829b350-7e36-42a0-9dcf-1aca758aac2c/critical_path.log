@@ -1,4 +1,0 @@
-//:app#macosx-x86_64,private-headers: {"totalElapsedTimeMs":9,"type":"cxx_header_symlink_tree","executionTimeInfo":{"executionDurationMs":9,"eventNanoTime":261120612619064}}
-//:app#macosx-x86_64,preprocessor-deps: {"totalElapsedTimeMs":9,"type":"dependency_aggregation","executionTimeInfo":{"executionDurationMs":0,"eventNanoTime":261120626757280}}
-//:app#compile-main.cpp.oa5b6a1ba,macosx-x86_64: {"totalElapsedTimeMs":2283,"type":"cxx_preprocess_and_compile","executionTimeInfo":{"executionDurationMs":2274,"eventNanoTime":261122921680868}}
-//:app#binary: {"totalElapsedTimeMs":2379,"type":"cxx_link","executionTimeInfo":{"executionDurationMs":96,"eventNanoTime":261123054500861}}
