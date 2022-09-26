@@ -1,3 +1,7 @@
+# Built binaries
+test
+cache
+
 # Prerequisites
 *.d
 
