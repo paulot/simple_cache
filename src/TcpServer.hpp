@@ -24,7 +24,7 @@ class AsyncTcpServer{
 private:
   void start_accept();
 
-  void handle_accept(TcpConnection::pointer new_connection,
+  void handle_accept(const TcpConnection::pointer& new_connection,
       const boost::system::error_code& error);
 
   boost::asio::ip::tcp::acceptor acceptor_;

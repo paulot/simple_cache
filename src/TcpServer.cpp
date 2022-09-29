@@ -10,11 +10,8 @@ void AsyncTcpServer::start_accept() {
         boost::asio::placeholders::error));
 }
 
-void AsyncTcpServer::handle_accept(TcpConnection::pointer new_connection,
+void AsyncTcpServer::handle_accept(const TcpConnection::pointer& new_connection,
         const boost::system::error_code& error) {
-  if (!error) {
-    new_connection->start();
-  }
-
-  // start_accept();
+  new_connection->handleRead(error);
+  start_accept();
 }

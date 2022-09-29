@@ -37,8 +37,13 @@ void Cache<Key, Value>::evict() {
   // Evict the item on the back
   auto [key, value] = this->values_.back();
   VLOG(2) << "evict::Evicting kv " << key << ' ' << value;
+
+  // !! Critical section
+  // Write-modify the back of values_ list -> Probably ok with local lock 
+  // Write-modify keys_ -> Needs global lock on keys
   this->values_.pop_back();
   this->keys_.erase(key);
+  // !! End of Critical section
 }
 
 template <typename Key, typename Value>
@@ -53,17 +58,29 @@ void Cache<Key, Value>::put(const Key& key, const Value& value) {
     // Did not find the value, add it to the list and to the map to the front
     if (this->keys_.size() >= this->capacity_) {
       VLOG(2) << "put::Evicting, capacity, size " << this->keys_.size() << ' ' << this->capacity_;
+      // !! Evict would need a lock
       evict();
     }
 
+    // !! Critical section
+    // Write-modify the front of values_ list -> Probably ok with local lock
+    // Write-modify keys_ -> Needs global lock on keys_ (adds an element)
     this->values_.emplace_front(key, value);
     this->keys_[key] = this->values_.begin();
+    // !! End of Critical section
   } else {
     // Found the value, no need to evict. Update the value and move to front
     VLOG(2) << "put::Item found moving to front";
+
+    // !! Critical section
+    // Write-modify keys_ editing value -> ok with local lock to that object as the key is not modified
+    // Write-modify values_ moving to front, needs lock on front, item back fwd and next back fwd. 
+    //            likely global lock on values
+    // Write-modify keys editing value -> ok with local lock
     (*this->keys_[key]).second = value;
     moveToFront(this->keys_[key]);
     this->keys_[key] = this->values_.begin();
+    // !! End of Critical section
   }
 }
 
@@ -81,8 +98,13 @@ boost::optional<Value> Cache<Key, Value>::get(const Key& key) {
     return boost::none; 
   }
 
+  // !! Critical section
+  // Write-modify keys_ editing value -> ok with local lock to that object as the key is not modified
+  // Write-modify values_ moving to front, needs lock on front, item back fwd and next back fwd. 
+  //            likely global lock on values
   moveToFront(this->keys_[key]);
   this->keys_[key] = this->values_.begin();
+  // !! End of Critical section
   VLOG(2) << "get:;Item found k v " << this->values_.front().first << ' ' << this->values_.front().second;
   return this->values_.front().second;
 }

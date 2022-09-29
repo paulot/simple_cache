@@ -30,15 +30,18 @@ public:
 
   tcp::socket& socket();
 
-  void start();
+  void handleRead(const boost::system::error_code& error);
 
 private:
+  const std::string delimiter_ = "\n";
+  constexpr static uint32_t maxLen_ = 1024;
   tcp::socket socket_;
-  std::string message_;
+  char message_[maxLen_];
 
   TcpConnection(boost::asio::io_service& io_service)
       : socket_(io_service) {}
 
-  void handle_write(const boost::system::error_code& /*error*/,
+  void handleWrite(const boost::system::error_code& /*error*/,
       size_t /*bytes_transferred*/) {}
+
 };
