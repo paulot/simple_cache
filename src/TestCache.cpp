@@ -58,33 +58,34 @@ TEST(LRUCacheTest, TestPutEvict) {
   }
 }
 
-TEST(LRUCacheTest, TestConcurrentPut) {
-  auto cache = Cache<int32_t, std::string>(5);
-  boost::asio::thread_pool pool(5);
+TEST(LRUCacheTest, TestConcurrentPut100k) {
+  uint32_t capacity = 5;
+  uint32_t nThreads = 50;
+  uint32_t nOperations = 2000;
+  auto cache = Cache<int32_t, std::string>(capacity);
+  boost::asio::thread_pool pool(nThreads);
 
-  // Keep the set of insertions from each thread, no need for locks
-  // as each thread has it's own vector.
-  std::unordered_map<std::thread::id, std::vector<int32_t>> insertions;
-  for (int32_t i = 0; i < 100000; ++i) {
-    boost::asio::post(pool, [&cache, &insertions, i](){
-      cache.put(i, "foo");
-      cache.get(i);
-
-      std::thread::id tId = std::this_thread::get_id();
-      insertions[tId].push_back(i);
+  for (int32_t i = 0; i < nThreads; ++i) {
+    boost::asio::post(pool, [i, nOperations, &cache](){
+      for (int32_t j = 0; j < nOperations; ++j) {
+        int32_t key = (i << 15) + j;
+        cache.put(key, "foo");
+        cache.get(key);
+      }
     });
   }
   pool.join();
   
   int32_t numberFound = 0;
-  for (const auto& [id, vec] : insertions) {
-    auto size = vec.size();
-    for (int32_t i = 0; i < 5; ++i) {
-      if (cache.get(vec[size - 1 - i]) != boost::none) {
+  for (int32_t i = 0; i < nThreads; ++i) {
+    for (int32_t j = nOperations - 5; j < nOperations; ++j) {
+      int32_t key = (i << 15) + j;
+      if (cache.get(key) != boost::none) {
         numberFound++;
       }
     }
   }
+
   EXPECT_EQ(numberFound, 5);
 }
 

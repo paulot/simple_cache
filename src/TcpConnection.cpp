@@ -1,96 +1,75 @@
+#include <algorithm>
+#include <cstdio>
+#include <iostream>
+#include <boost/bind.hpp>
+
 #include "TcpConnection.hpp"
+#include "Utils.hpp"
+#include "Response.hpp"
+#include "Request.hpp"
+
+
+using boost::asio::ip::tcp;
 
 tcp::socket& TcpConnection::socket() {
-    return this->socket_;
+  return this->socket_;
 }
 
-
-  /*
-    // message_ = make_daytime_string();
-    time_t now = std::time(0);
-    message_ = std::ctime(&now);
-
-    boost::asio::async_write(socket_, boost::asio::buffer(message_),
-        boost::bind(&TcpConnection::handleWrite, shared_from_this(),
-          boost::asio::placeholders::error,
-          boost::asio::placeholders::bytes_transferred));
-  */
+void TcpConnection::handleRead() {
+  boost::asio::async_read_until(
+      socket_,
+      // boost::asio::buffer(message_, TcpConnection::maxLen_),
+      message_,
+      Request::term_,
+      boost::bind(
+        &TcpConnection::handleMessage,
+        shared_from_this(),
+        boost::asio::placeholders::bytes_transferred));
+}
 
 void TcpConnection::handleRead(const boost::system::error_code& error) {
   if (!error) {
-    std::cout << message_ << std::endl;
-    boost::asio::async_read(
-        socket_,
-        boost::asio::buffer(message_, TcpConnection::maxLen_),
-        boost::bind(
-          &TcpConnection::handleRead,
-          shared_from_this(),
-          boost::asio::placeholders::error));
+    handleRead();
   }
 }
 
+void TcpConnection::writeResult(const std::string& message) {
+  boost::asio::async_write(
+      socket_,
+      boost::asio::buffer(message, message.size()),
+      boost::bind(
+        &TcpConnection::handleWrite,
+        this,
+        boost::asio::placeholders::error,
+        boost::asio::placeholders::bytes_transferred));
+}
 
+void TcpConnection::handleWrite(const boost::system::error_code& error, size_t bytesTransferred) const {
+  if (error) {
+    std::cerr << "Error: " <<  error << std::endl;
+    std::cerr << "Bytes Transferred: " << bytesTransferred << std::endl;
+  }
+}
 
-/**
-  boost::asio::streambuf streambuf;
-  boost::asio::async_read_until(socket_, streambuf, delimiter_,
-    [this, &streambuf](
-      const boost::system::error_code& error_code,
-      size_t bytes_transferred) {
+void TcpConnection::handleMessage(size_t bytesTransferred) {
+  try {
+    auto request = Request::deserialize(message_);
+  //return Response::deserialize(boost::asio::buffer_cast<const char*>(buf.data()));
 
-      std::cout << "reading from socket bytes_transfered " << bytes_transferred << std::endl;
-      // Verify streambuf contains more data beyond the delimiter. (e.g.
-      // async_read_until read beyond the delimiter)
-      // assert(streambuf.size() > bytes_transferred);
-
-      if (bytes_transferred> 0) {
-        // Extract up to the first delimiter.
-//         std::string command{
-//           buffers_begin(streambuf.data()),
-//           buffers_begin(streambuf.data()) + bytes_transferred
-//             - delimiter_.size()};
-//         std::string command{
-//           buffers_begin(streambuf.data()),
-//           buffers_begin(streambuf.data()) + bytes_transferred};
-
-
-        // Consume through the first delimiter so that subsequent async_read_until
-        // will not reiterate over the same data.
-        streambuf.consume(bytes_transferred);
-
-        // std::cout << "received command: " << command << "\n"
-        std::cout << "streambuf contains " << streambuf.size() << " bytes."
-                  << std::endl;
-
-      }
+    if (request.type_ == RequestType::GET) {
+      assert(request.params_.size() == 1);
+      auto val = cache_->get(request.params_[0]);
+      writeResult(Response::serializeOk(val));
+      handleRead();
+    } else if (request.type_ == RequestType::PUT) {
+      assert(request.params_.size() == 2);
+      cache_->put(request.params_[0], request.params_[1]);
+      writeResult(Response::serializeOk());
+      handleRead();
+    } else if (request.type_ == RequestType::CLOSE) {
+      writeResult(Response::serializeOk());
     }
-  );
- *
-
-boost::asio::streambuf streambuf;
-  boost::asio::async_read_until(socket2, streambuf, delimiter,
-    [delimiter, &streambuf](
-      const boost::system::error_code& error_code,
-      std::size_t bytes_transferred)
-    {
-      // Verify streambuf contains more data beyond the delimiter. (e.g.
-      // async_read_until read beyond the delimiter)
-      assert(streambuf.size() > bytes_transferred);
-
-      // Extract up to the first delimiter.
-      std::string command{
-        buffers_begin(streambuf.data()),
-        buffers_begin(streambuf.data()) + bytes_transferred
-          - delimiter.size()};
-
-      // Consume through the first delimiter so that subsequent async_read_until
-      // will not reiterate over the same data.
-      streambuf.consume(bytes_transferred);
-
-      assert(command == "cmd1");
-      std::cout << "received command: " << command << "\n"
-                << "streambuf contains " << streambuf.size() << " bytes."
-                << std::endl;
-    }
-  );
-*/
+  } catch (const std::runtime_error& e) {
+    writeResult(Response::serializeError(e.what()));
+  }
+}

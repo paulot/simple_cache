@@ -9,20 +9,20 @@
 
 template <typename Key, typename Value>
 class Cache {
-  public:
-    Cache(size_t capacity) : capacity_(capacity) {}
+public:
+  Cache(size_t capacity) : capacity_(capacity) {}
 
-    void put(const Key& key, const Value& value);
-    boost::optional<Value> get(const Key&);
+  void put(const Key& key, const Value& value);
+  boost::optional<Value> get(const Key&);
 
-  private:
-    size_t capacity_;
-    std::list<std::pair<Key, Value>> values_;
-    std::unordered_map<Key, typename std::list<std::pair<Key, Value>>::iterator> keys_; 
-    std::mutex globalMutex_;
+private:
+  size_t capacity_;
+  std::list<std::pair<Key, Value>> values_;
+  std::unordered_map<Key, typename std::list<std::pair<Key, Value>>::iterator> keys_; 
+  std::mutex globalMutex_;
 
-    void moveToFront(typename std::list<std::pair<Key, Value>>::iterator element);
-    void evict();
+  void moveToFront(typename std::list<std::pair<Key, Value>>::iterator element);
+  void evict();
 };
 
 template <typename Key, typename Value>
