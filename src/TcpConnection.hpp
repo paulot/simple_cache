@@ -26,8 +26,7 @@ public:
   void handleRead();
 
 private:
-  // constexpr static uint32_t maxLen_ = 1024;
-  constexpr static uint32_t maxLen_ = 50;
+  constexpr static uint32_t maxLen_ = 1024;
   // char message_[maxLen_];
   boost::asio::streambuf message_;
 

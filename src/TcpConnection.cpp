@@ -18,7 +18,6 @@ tcp::socket& TcpConnection::socket() {
 void TcpConnection::handleRead() {
   boost::asio::async_read_until(
       socket_,
-      // boost::asio::buffer(message_, TcpConnection::maxLen_),
       message_,
       Request::term_,
       boost::bind(
@@ -54,7 +53,6 @@ void TcpConnection::handleWrite(const boost::system::error_code& error, size_t b
 void TcpConnection::handleMessage(size_t bytesTransferred) {
   try {
     auto request = Request::deserialize(message_);
-  //return Response::deserialize(boost::asio::buffer_cast<const char*>(buf.data()));
 
     if (request.type_ == RequestType::GET) {
       assert(request.params_.size() == 1);

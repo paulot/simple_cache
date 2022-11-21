@@ -21,8 +21,6 @@ public:
   boost::optional<std::string> get(const std::string& key);
 
 private:
-  // constexpr static uint32_t maxLen_ = 1024;
-  // char buffer_[maxLen_];
   std::string addr_;
   uint32_t port_;
   boost::asio::ip::tcp::socket socket_;
@@ -60,8 +58,6 @@ Response CacheClient::read() {
     throw std::runtime_error(error.message());
   }
 
-  // return Response::deserialize(buffer_, bytesTransferred, maxLen_);
-  // return Response::deserialize(boost::asio::buffer_cast<const char*>(buf.data()));
   return Response::deserialize(buf);
 }
 
